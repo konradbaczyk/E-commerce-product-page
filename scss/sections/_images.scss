@@ -1,0 +1,55 @@
+@use "../utils/resetCSS" as *;
+@use "../utils/_variables" as *;
+@use "../utils/_components" as *;
+
+.images {
+	// height: 37rem;
+	margin-bottom: 1em;
+	padding-top: 5.5rem;
+
+	&__big-image-box {
+		position: relative;
+		height: 80vw;
+		overflow: hidden;
+	}
+
+	&__big-image {
+		position: absolute;
+		top: -3rem;
+		z-index: -100;
+		display: none;
+
+		&--active {
+			display: block;
+		}
+	}
+
+	&__arrow {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 3.5rem;
+		height: 3.5rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-color: $white;
+		border-radius: 50%;
+
+		svg {
+			scale: 0.8;
+		}
+
+		&--left {
+			left: 5%;
+		}
+
+		&--right {
+			right: 5%;
+		}
+	}
+
+	&__thumbnails {
+		display: none;
+	}
+}

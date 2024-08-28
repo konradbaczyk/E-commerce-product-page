@@ -1,0 +1,288 @@
+@use "../utils/resetCSS" as *;
+@use "../utils/_variables" as *;
+@use "../utils/_components" as *;
+
+.navbar {
+	position: fixed;
+	width: 100%;
+	height: 5.5rem;
+	display: flex;
+	justify-content: space-between;
+	background-color: $white;
+
+	&__navigation {
+		display: flex;
+		flex-direction: row-reverse;
+		align-items: center;
+	}
+
+	&__menu-icon {
+		width: 2rem;
+		height: 2rem;
+		padding: 2em;
+		background-image: url("../../images/icon-menu.svg");
+		background-repeat: no-repeat;
+		background-position: center;
+		z-index: 100;
+		transition: outline 0.3s;
+
+		&:focus,
+		&:active {
+			outline: 1px solid $black;
+		}
+	}
+
+	&__menu {
+		position: fixed;
+		left: 0;
+		top: 0;
+		height: 100%;
+		width: 65%;
+		padding-top: 7em;
+		padding-left: 1em;
+		display: flex;
+		flex-direction: column;
+		gap: 2em;
+		background-color: $white;
+		transform: scaleX(0);
+		transform-origin: left;
+		opacity: 0;
+		transition: transform 0.5s, opacity 0.5s;
+
+		&--link {
+			padding: 0.5em;
+			font-size: 2rem;
+			font-weight: $fw-bold;
+			transition: color 0.3s;
+
+			&:focus,
+			&:active {
+				color: $black;
+				outline: 1px solid $orange;
+			}
+		}
+
+		&--shadow {
+			position: absolute;
+			top: 0;
+			right: -100%;
+			width: 100%;
+			height: 100%;
+			background-color: $black-bg-shadow;
+		}
+
+		&--active {
+			transform: scaleX(1);
+			opacity: 1;
+		}
+	}
+
+	&__logo {
+		&:focus,
+		&:active {
+			outline: 1px solid $orange;
+		}
+	}
+
+	&__personal {
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+	}
+
+	&__cart-btn {
+		padding: 1em;
+
+		&:focus,
+		&:active {
+			outline: 1px solid $orange;
+		}
+	}
+
+	&__avatar {
+		margin-right: 1em;
+		padding: 0.5em;
+		border-radius: 50%;
+
+		&--img {
+			width: 2.5rem;
+			height: 2.5rem;
+			border-radius: 50%;
+			border: 1px solid transparent;
+		}
+
+		&:focus > &--img {
+			border: 2px solid $orange;
+		}
+	}
+}
+
+// MEDIA QUERIES
+
+@media (min-width: 768px) {
+	.navbar {
+		height: 9rem;
+		border-bottom: solid 2px $light-grayish-blue;
+
+		&__navigation {
+			display: flex;
+			flex-direction: row;
+		}
+
+		&__menu-icon {
+			display: none;
+		}
+
+		&__menu {
+			position: static;
+			width: fit-content;
+			padding: 0;
+			flex-direction: row;
+			gap: 1em;
+			justify-content: center;
+			transform: scaleX(1);
+			opacity: 1;
+
+			&--item {
+				position: relative;
+				height: 100%;
+				width: fit-content;
+				padding: 0 0.2em;
+				display: flex;
+				align-items: center;
+			}
+
+			&--link {
+				height: fit-content;
+				padding: 0;
+				font-size: 1.6rem;
+				font-weight: $fw-regular;
+				color: $dark-grayish-blue;
+				transition: color 0.3s;
+
+				&::before {
+					content: "";
+					position: absolute;
+					left: 0;
+					bottom: 0;
+					width: 100%;
+					height: 4px;
+					background-color: $orange;
+					opacity: 0;
+					pointer-events: none;
+					transition: opacity 0.3s;
+				}
+
+				&:hover {
+					color: $black;
+				}
+
+				&:focus::before,
+				&:active::before,
+				&:hover::before {
+					opacity: 1;
+				}
+			}
+
+			&--shadow {
+				display: none;
+			}
+
+			&--active {
+				transform: scaleX(1);
+				opacity: 1;
+			}
+		}
+
+		&__logo {
+			margin: 0 1em;
+			padding: 1em;
+		}
+
+		&__personal {
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+		}
+
+		&__cart-btn {
+			scale: 1.1;
+
+			&:hover > svg > path {
+				fill: #000000;
+			}
+		}
+
+		&__avatar {
+			&:hover > &--img {
+				border: 2px solid $orange;
+			}
+
+			&--img {
+				width: 3.5rem;
+				height: 3.5rem;
+				border: 2px solid transparent;
+				transition: border 0.3s;
+			}
+		}
+	}
+}
+
+@media (min-width: 992px) {
+	.navbar {
+		height: 10rem;
+
+		&__menu {
+			gap: 1em;
+
+			&--link {
+				font-size: 1.8rem;
+
+				&::before {
+					content: "";
+					position: absolute;
+					left: 0;
+					bottom: 0;
+					width: 100%;
+					height: 4px;
+					background-color: $orange;
+					opacity: 0;
+					pointer-events: none;
+					transition: opacity 0.3s;
+				}
+
+				&:hover {
+					color: $black;
+				}
+
+				&:focus::before,
+				&:active::before,
+				&:hover::before {
+					opacity: 1;
+				}
+			}
+
+			&--shadow {
+				display: none;
+			}
+
+			&--active {
+				transform: scaleX(1);
+				opacity: 1;
+			}
+		}
+
+		&__logo {
+			margin: 0 2em;
+		}
+
+		&__avatar {
+			&--img {
+				width: 4.5rem;
+				height: 4.5rem;
+				margin-right: 2em;
+				margin-left: 1em;
+			}
+		}
+	}
+}
