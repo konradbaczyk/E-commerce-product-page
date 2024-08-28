@@ -2,54 +2,120 @@
 @use "../utils/_variables" as *;
 @use "../utils/_components" as *;
 
-.images {
-	// height: 37rem;
+.swiper {
+	width: 100%;
+	height: 100%;
 	margin-bottom: 1em;
 	padding-top: 5.5rem;
+}
 
-	&__big-image-box {
-		position: relative;
-		height: 80vw;
+.swiper-slide {
+	position: relative;
+	height: 80vw;
+	overflow: hidden;
+
+	.slide1 {
+		transform: translateY(-2em);
+	}
+}
+
+.arrow {
+	position: absolute;
+	top: 50%;
+	z-index: 100;
+	width: 3.5rem;
+	height: 3.5rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: $white;
+	border-radius: 50%;
+
+	svg {
+		scale: 0.8;
+	}
+
+	&__left {
+		left: 5%;
+	}
+
+	&__right {
+		right: 5%;
+	}
+}
+
+.images {
+	display: none;
+}
+
+@media (min-width: 768px) {
+	.swiper {
+		display: none;
+	}
+
+	.images {
+		padding: 12rem;
+		padding-bottom: 4rem;
+		display: block;
 		overflow: hidden;
-	}
 
-	&__big-image {
-		position: absolute;
-		top: -3rem;
-		z-index: -100;
-		display: none;
+		&__big-image-box {
+			margin-bottom: 2em;
+		}
 
-		&--active {
-			display: block;
+		&__big-image {
+			display: none;
+			border-radius: 24px;
+
+			&--active {
+				display: block;
+			}
+		}
+
+		&__thumbnails {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		&__thumbnail-box {
+			width: 12rem;
+			height: 12rem;
+			overflow: hidden;
+			border-radius: 24px;
+
+			&--active {
+				border: 3px solid $orange;
+			}
+		}
+
+		&__thumbnail {
+			&--active {
+				opacity: 0.6;
+			}
 		}
 	}
+}
 
-	&__arrow {
-		position: absolute;
-		top: 50%;
-		transform: translateY(-50%);
-		width: 3.5rem;
-		height: 3.5rem;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		background-color: $white;
-		border-radius: 50%;
-
-		svg {
-			scale: 0.8;
-		}
-
-		&--left {
-			left: 5%;
-		}
-
-		&--right {
-			right: 5%;
-		}
+@media (min-width: 992px) {
+	.images-area {
+		width: 50%;
 	}
+	.images {
+		padding: 0;
+		padding-top: 18rem;
+		padding-left: 7rem;
+		padding-right: 7rem;
 
-	&__thumbnails {
-		display: none;
+		&__thumbnails {
+			max-width: 100%;
+			display: flex;
+			justify-content: space-between;
+		}
+
+		&__thumbnail-box {
+			width: 7.5rem;
+			height: 7.5rem;
+			border-radius: 18px;
+		}
 	}
 }

@@ -57,32 +57,54 @@
 
 		<!-- MAIN -->
 		<main class="main wrapper">
-			<section class="images">
-				<div class="images__big-image-box">
-					<img src="./images/image-product-1.jpg" class="images__big-image images__big-image--active" alt="Pair of shoes" />
-					<img src="./images/image-product-2.jpg" class="images__big-image" alt="Pair of shoes" />
-					<img src="./images/image-product-3.jpg" class="images__big-image" alt="Pair of shoes" />
-					<img src="./images/image-product-4.jpg" class="images__big-image" alt="Pair of shoes" />
+			<section class="images-area">
+				<!-- SWIPER (only mobile view) -->
+				<div class="swiper mySwiper">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide"><img src="./images/image-product-1.jpg" class="slide1" alt="Pair of shoes" /></div>
+						<div class="swiper-slide"><img src="./images/image-product-2.jpg" class="slide2" alt="Pair of shoes" /></div>
+						<div class="swiper-slide"><img src="./images/image-product-3.jpg" class="slide3" alt="Pair of shoes" /></div>
+						<div class="swiper-slide"><img src="./images/image-product-4.jpg" class="slide4" alt="Pair of shoes" /></div>
+					</div>
 
-					<button class="images__arrow images__arrow--left" id="btn-previous-img">
-						<svg width="13" height="18" xmlns="http://www.w3.org/2000/svg">
-							<path d="M11 1 3 9l8 8" stroke="#1D2026" stroke-width="3" fill="none" fill-rule="evenodd" />
-						</svg>
-					</button>
-
-					<button class="images__arrow images__arrow--right" id="btn-next-img">
+					<button class="arrow arrow__right" id="btn-next-img">
 						<svg width="13" height="18" xmlns="http://www.w3.org/2000/svg">
 							<path d="m2 1 8 8-8 8" stroke="#1D2026" stroke-width="3" fill="none" fill-rule="evenodd" />
 						</svg>
 					</button>
+					<button class="arrow arrow__left" id="btn-previous-img">
+						<svg width="13" height="18" xmlns="http://www.w3.org/2000/svg">
+							<path d="M11 1 3 9l8 8" stroke="#1D2026" stroke-width="3" fill="none" fill-rule="evenodd" />
+						</svg>
+					</button>
 				</div>
+				<!-- SWIPER (only mobile view) END-->
 
-				<!-- <div class="images__thumbnails">
-					<img src="" alt="" class="images__thumbnail" />
-					<img src="" alt="" class="images__thumbnail" />
-					<img src="" alt="" class="images__thumbnail" />
-					<img src="" alt="" class="images__thumbnail" />
-				</div> -->
+				<!-- IMAGES AREA ON 768px+ -->
+				<div class="images">
+					<div class="images__big-image-box">
+						<img src="./images/image-product-1.jpg" class="images__big-image images__big-image--active" id="image1" alt="Pair of shoes" />
+						<img src="./images/image-product-2.jpg" class="images__big-image" id="image2" alt="Pair of shoes" />
+						<img src="./images/image-product-3.jpg" class="images__big-image" id="image3" alt="Pair of shoes" />
+						<img src="./images/image-product-4.jpg" class="images__big-image" id="image4" alt="Pair of shoes" />
+					</div>
+
+					<div class="images__thumbnails">
+						<button class="images__thumbnail-box images__thumbnail-box--active">
+							<img src="./images/image-product-1-thumbnail.jpg" class="images__thumbnail images__thumbnail--active" id="thumbnail-image1" alt="" />
+						</button>
+						<button class="images__thumbnail-box">
+							<img src="./images/image-product-2-thumbnail.jpg" class="images__thumbnail" id="thumbnail-image2" alt="" />
+						</button>
+						<button class="images__thumbnail-box">
+							<img src="./images/image-product-3-thumbnail.jpg" class="images__thumbnail" id="thumbnail-image3" alt="" />
+						</button>
+						<button class="images__thumbnail-box">
+							<img src="./images/image-product-4-thumbnail.jpg" class="images__thumbnail" id="thumbnail-image4" alt="" />
+						</button>
+					</div>
+				</div>
+				<!-- IMAGES AREA ON 768px+ END -->
 			</section>
 		</main>
 		<!-- MAIN END -->
@@ -97,12 +119,17 @@
 		<!-- $125.00 50% $250.00 -->
 		<!--  -->
 
+		<!-- Swiper JS -->
 		<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-		<script type="module">
-			import Swiper from "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs";
-
-			// const swiper = new Swiper(...)
+		<!-- Initialize Swiper -->
+		<script>
+			var swiper = new Swiper(".mySwiper", {
+				navigation: {
+					nextEl: ".arrow__right",
+					prevEl: ".arrow__left",
+				},
+			});
 		</script>
 	</body>
 </html>
