@@ -69,6 +69,8 @@
 
 			&--active {
 				display: block;
+				opacity: 1;
+				animation: showImg 3.5s forwards;
 			}
 		}
 
@@ -77,21 +79,42 @@
 			justify-content: space-between;
 		}
 
-		&__thumbnail-box {
+		&__thumbnail-btn {
+			appearance: none;
+			position: relative;
 			width: 12rem;
 			height: 12rem;
-			overflow: hidden;
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-size: cover;
+			outline: 3px solid transparent;
 			border-radius: 24px;
+			transition: opacity 0.3s;
 
-			&--active {
+			&:checked {
+				border: 3px solid $orange;
+				opacity: 0.6;
+			}
+
+			&:hover,
+			&:focus {
+				cursor: pointer;
+				opacity: 0.6;
 				border: 3px solid $orange;
 			}
 		}
 
-		&__thumbnail {
-			&--active {
-				opacity: 0.6;
-			}
+		&__thumbnail-btn1 {
+			background-image: url("../../images/image-product-1-thumbnail.jpg");
+		}
+		&__thumbnail-btn2 {
+			background-image: url("../../images/image-product-2-thumbnail.jpg");
+		}
+		&__thumbnail-btn3 {
+			background-image: url("../../images/image-product-3-thumbnail.jpg");
+		}
+		&__thumbnail-btn4 {
+			background-image: url("../../images/image-product-4-thumbnail.jpg");
 		}
 	}
 }
@@ -106,16 +129,20 @@
 		padding-left: 7rem;
 		padding-right: 7rem;
 
-		&__thumbnails {
-			max-width: 100%;
-			display: flex;
-			justify-content: space-between;
-		}
-
-		&__thumbnail-box {
+		&__thumbnail-btn {
 			width: 7.5rem;
 			height: 7.5rem;
 			border-radius: 18px;
 		}
+	}
+}
+
+@keyframes showImg {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
 	}
 }

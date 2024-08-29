@@ -348,22 +348,47 @@ textarea {
   }
   .images__big-image--active {
     display: block;
+    opacity: 1;
+    animation: showImg 3.5s forwards;
   }
   .images__thumbnails {
     display: flex;
     justify-content: space-between;
   }
-  .images__thumbnail-box {
+  .images__thumbnail-btn {
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    position: relative;
     width: 12rem;
     height: 12rem;
-    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-size: cover;
+    outline: 3px solid transparent;
     border-radius: 24px;
+    transition: opacity 0.3s;
   }
-  .images__thumbnail-box--active {
+  .images__thumbnail-btn:checked {
+    border: 3px solid rgb(255, 125, 26);
+    opacity: 0.6;
+  }
+  .images__thumbnail-btn:hover, .images__thumbnail-btn:focus {
+    cursor: pointer;
+    opacity: 0.6;
     border: 3px solid rgb(255, 125, 26);
   }
-  .images__thumbnail--active {
-    opacity: 0.6;
+  .images__thumbnail-btn1 {
+    background-image: url("../../images/image-product-1-thumbnail.jpg");
+  }
+  .images__thumbnail-btn2 {
+    background-image: url("../../images/image-product-2-thumbnail.jpg");
+  }
+  .images__thumbnail-btn3 {
+    background-image: url("../../images/image-product-3-thumbnail.jpg");
+  }
+  .images__thumbnail-btn4 {
+    background-image: url("../../images/image-product-4-thumbnail.jpg");
   }
 }
 @media (min-width: 992px) {
@@ -376,15 +401,18 @@ textarea {
     padding-left: 7rem;
     padding-right: 7rem;
   }
-  .images__thumbnails {
-    max-width: 100%;
-    display: flex;
-    justify-content: space-between;
-  }
-  .images__thumbnail-box {
+  .images__thumbnail-btn {
     width: 7.5rem;
     height: 7.5rem;
     border-radius: 18px;
+  }
+}
+@keyframes showImg {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 body {
