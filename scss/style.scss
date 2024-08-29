@@ -3,8 +3,15 @@
 @use "./utils/_components" as *;
 @use "./sections/_navbar" as *;
 @use "./sections/_images" as *;
+@use "./sections/_product-info" as *;
 
 body {
 	font-family: $ff-primary;
 	font-size: 1.6rem;
+}
+
+@media (min-width: 992px) {
+	.main {
+		display: flex;
+	}
 }

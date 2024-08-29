@@ -1,0 +1,189 @@
+@use "../utils/resetCSS" as *;
+@use "../utils/_variables" as *;
+@use "../utils/_components" as *;
+
+.product-info {
+	padding: 0 2rem;
+
+	.company-name {
+		margin-top: 2rem;
+		text-transform: uppercase;
+		font-size: 1.2rem;
+		color: $dark-grayish-blue;
+		letter-spacing: 0.1em;
+	}
+}
+
+.product-info-box {
+	&__product-name {
+		margin: 1.5rem 0;
+		line-height: 120%;
+		font-size: 2.6rem;
+	}
+
+	&__product-description {
+		line-height: 150%;
+		font-size: 1.5rem;
+		color: $dark-grayish-blue;
+	}
+}
+
+.price-info {
+	margin: 1.5rem 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	&__actual-price {
+		display: flex;
+		align-items: center;
+		font-size: 2.6rem;
+		font-weight: $fw-bold;
+
+		.discount {
+			margin-left: 0.5em;
+			padding: 0.2em 0.5em;
+			font-size: 1.6rem;
+			color: $white;
+			background-color: $black;
+			border-radius: 8px;
+		}
+	}
+
+	&__previous-price {
+		font-size: 1.8rem;
+		font-weight: $fw-bold;
+		text-decoration: line-through;
+		color: $grayish-blue;
+	}
+}
+
+.add-to-cart-area {
+	margin-bottom: 3rem;
+	display: flex;
+	flex-direction: column;
+	gap: 1em;
+
+	&__counter {
+		height: 5rem;
+		padding: 0.7em 1em;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		background-color: $light-grayish-blue;
+		border-radius: 8px;
+
+		&--minus-btn {
+			display: flex;
+		}
+
+		&--minus-btn,
+		&--plus-btn {
+			padding: 0.3em;
+			transition: scale 0.3s;
+
+			&:focus,
+			&:hover {
+				scale: 1.4;
+			}
+		}
+
+		&--number {
+			font-weight: $fw-bold;
+		}
+	}
+
+	&__add-btn {
+		width: 100%;
+		height: 5rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 0.3em;
+		background-color: $orange;
+		border-radius: 8px;
+		transition: opacity 0.3s;
+
+		&--icon {
+			fill: $black;
+			scale: 0.8;
+		}
+
+		&--text {
+			font-size: 1.4rem;
+			font-weight: $fw-bold;
+		}
+
+		&:focus,
+		&:hover {
+			opacity: 0.8;
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	.product-info {
+		padding: 0 12rem;
+	}
+}
+
+@media (min-width: 992px) {
+	.product-info {
+		width: 50%;
+		padding-top: 18rem;
+		padding-left: 7rem;
+		padding-right: 7rem;
+	}
+
+	.product-info-box {
+		&__product-name {
+			margin: 1.5rem 0 4rem 0;
+			font-size: 3.6rem;
+		}
+
+		&__product-description {
+			font-size: 1.6rem;
+		}
+	}
+
+	.price-info {
+		margin: 2.5rem 0;
+		display: flex;
+		flex-direction: column;
+		align-items: start;
+		gap: 0.4em;
+
+		&__actual-price {
+			font-size: 2.6rem;
+			font-weight: $fw-bold;
+
+			.discount {
+				margin-left: 1em;
+			}
+		}
+
+		&__previous-price {
+			font-size: 1.6rem;
+		}
+	}
+
+	.add-to-cart-area {
+		flex-direction: row;
+		justify-content: center;
+		gap: 1em;
+
+		&__counter {
+			width: 40%;
+		}
+
+		&__add-btn {
+			width: 60%;
+		}
+	}
+}
+
+@media (min-width: 1200px) {
+	.product-info {
+		padding-top: 24rem;
+	}
+}
