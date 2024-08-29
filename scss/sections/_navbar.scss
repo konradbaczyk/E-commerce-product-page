@@ -92,11 +92,28 @@
 	}
 
 	&__cart-btn {
+		position: relative;
 		padding: 1em;
 
 		&:focus,
 		&:active {
 			outline: 1px solid $orange;
+		}
+
+		&--added-items {
+			position: absolute;
+			top: 15%;
+			right: 15%;
+			font-size: 1rem;
+			padding: 0.1em 0.6em;
+			color: $white;
+			background-color: $orange;
+			border-radius: 12px;
+			display: none;
+		}
+
+		&--added-items-active {
+			display: block;
 		}
 	}
 

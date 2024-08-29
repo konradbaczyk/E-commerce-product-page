@@ -131,10 +131,25 @@ textarea {
   align-items: center;
 }
 .navbar__cart-btn {
+  position: relative;
   padding: 1em;
 }
 .navbar__cart-btn:focus, .navbar__cart-btn:active {
   outline: 1px solid rgb(255, 125, 26);
+}
+.navbar__cart-btn--added-items {
+  position: absolute;
+  top: 15%;
+  right: 15%;
+  font-size: 1rem;
+  padding: 0.1em 0.6em;
+  color: rgb(255, 255, 255);
+  background-color: rgb(255, 125, 26);
+  border-radius: 12px;
+  display: none;
+}
+.navbar__cart-btn--added-items-active {
+  display: block;
 }
 .navbar__avatar {
   margin-right: 1em;

@@ -48,6 +48,7 @@
 								fill="#69707D"
 								fill-rule="nonzero" />
 						</svg>
+						<span class="navbar__cart-btn--added-items" id="cart-btn-counter">0</span>
 					</button>
 
 					<button class="navbar__avatar">
@@ -102,6 +103,7 @@
 				<!-- IMAGES AREA ON 768px+ END -->
 			</section>
 
+			<!-- PRODUCT INFO -->
 			<section class="product-info">
 				<h3 class="company-name">Sneaker Company</h3>
 
@@ -114,7 +116,7 @@
 				</div>
 
 				<div class="price-info">
-					<span class="price-info__actual-price">
+					<span class="price-info__actual-price" id="actual-price">
 						$125.00
 						<span class="discount">50%</span>
 					</span>
@@ -123,7 +125,7 @@
 
 				<div class="add-to-cart-area">
 					<div class="add-to-cart-area__counter">
-						<button class="add-to-cart-area__counter--minus-btn">
+						<button class="add-to-cart-area__counter--minus-btn" id="add-to-cart-counter-minus">
 							<svg width="12" height="4" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 								<defs>
 									<path
@@ -133,8 +135,10 @@
 								<use fill="#FF7E1B" fill-rule="nonzero" xlink:href="#a" />
 							</svg>
 						</button>
-						<span class="add-to-cart-area__counter--number">0</span>
-						<button class="add-to-cart-area__counter--plus-btn">
+
+						<span class="add-to-cart-area__counter--number" id="add-to-cart-counter-number">0</span>
+
+						<button class="add-to-cart-area__counter--plus-btn" id="add-to-cart-counter-plus">
 							<svg width="12" height="12" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 								<defs>
 									<path
@@ -146,7 +150,7 @@
 						</button>
 					</div>
 
-					<button class="add-to-cart-area__add-btn">
+					<button class="add-to-cart-area__add-btn" id="add-to-cart-btn">
 						<svg width="22" height="20" xmlns="http://www.w3.org/2000/svg">
 							<path
 								class="add-to-cart-area__add-btn--icon"
@@ -158,6 +162,7 @@
 					</button>
 				</div>
 			</section>
+			<!-- PRODUCT INFO END -->
 		</main>
 		<!-- MAIN END -->
 	</body>
