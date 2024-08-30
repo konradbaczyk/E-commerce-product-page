@@ -52,26 +52,26 @@
 							<span class="navbar__cart-btn--added-items" id="cart-btn-counter">0</span>
 						</button>
 
-						<div class="navbar__cart-preview">
+						<div class="navbar__cart-preview" id="cart-preview">
 							<h3 class="navbar__cart-title">Cart</h3>
 
-							<div class="cart-preview__empty cart-preview__empty--active">
+							<div class="cart-preview__empty cart-preview__empty--active" id="cart-empty">
 								<p class="cart-preview__empty--info">Your cart is empty.</p>
 							</div>
 
-							<div class="cart-preview__with-products">
+							<div class="cart-preview__with-products" id="cart-with-products">
 								<div class="navbar__cart-product">
 									<img src="./images/image-product-1-thumbnail.jpg" alt="" class="navbar__cart-product--img" />
 
 									<div class="navbar__cart-product--info">
-										<h4 class="navbar__cart-product--name">Fall Limited Edition Sneakers</h4>
-										<span class="navbar__cart-product--price">$125.00</span>
+										<h4 class="navbar__cart-product--name" id="cart-product-name"></h4>
+										<span class="navbar__cart-product--price">$<span id="cart-product-price"></span></span>
 										x
-										<span class="navbar__cart-product--quantity">3</span>
-										<span class="navbar__cart-product--value">$375.00</span>
+										<span class="navbar__cart-product--quantity" id="cart-product-quantity"></span>
+										<span class="navbar__cart-product--value">$<span id="cart-product-value"></span></span>
 									</div>
 
-									<button class="navbar__cart-product--delete-btn">
+									<button class="navbar__cart-product--delete-btn" id="cart-clear-btn">
 										<svg width="14" height="16" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 											<defs>
 												<path
@@ -144,7 +144,7 @@
 				<h3 class="company-name">Sneaker Company</h3>
 
 				<div class="product-info-box">
-					<h1 class="product-info-box__product-name">Fall Limited Edition Sneakers</h1>
+					<h1 class="product-info-box__product-name" id="product-name">Fall Limited Edition Sneakers</h1>
 					<p class="product-info-box__product-description">
 						These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they’ll withstand everything the
 						weather can offer.
@@ -152,8 +152,8 @@
 				</div>
 
 				<div class="price-info">
-					<span class="price-info__actual-price" id="actual-price">
-						$125.00
+					<span class="price-info__actual-price">
+						$<span id="actual-price">125.00</span>
 						<span class="discount">50%</span>
 					</span>
 					<span class="price-info__previous-price">$250.00</span>
