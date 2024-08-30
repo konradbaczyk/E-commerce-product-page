@@ -21,4 +21,5 @@ export const clearCart = () => {
 	cartEmptyPreview.classList.add("cart-preview__empty--active");
 	cartWithProductsPreview.classList.remove("cart-preview__with-products--active");
 	cartBtnCounter.innerText = 0;
+	cartBtnCounter.classList.remove("navbar__cart-btn--added-items-active");
 };

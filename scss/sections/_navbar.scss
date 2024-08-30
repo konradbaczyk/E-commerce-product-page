@@ -117,10 +117,13 @@
 		background-color: $white;
 		border-radius: 8px;
 		box-shadow: 0 18px 30px $black-cart-shadow;
+		opacity: 0;
 		display: none;
 
 		&--active {
 			display: block;
+			opacity: 1;
+			animation: showCart 0.5s forwards;
 		}
 
 		.cart-preview__empty {
@@ -400,5 +403,15 @@
 				margin-left: 1em;
 			}
 		}
+	}
+}
+
+@keyframes showCart {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
 	}
 }
