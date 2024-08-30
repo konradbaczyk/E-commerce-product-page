@@ -13,11 +13,13 @@ export const images = document.querySelectorAll(".images__big-image");
 const thumbnailsImagesBtns = document.querySelectorAll(".images__thumbnail-btn");
 
 // Add to cart items
-export const cartBtnCounter = document.getElementById("cart-btn-counter");
 export const productCounterNumber = document.getElementById("add-to-cart-counter-number");
 const productCounterMinusBtn = document.getElementById("add-to-cart-counter-minus");
 const productCounterPlusBtn = document.getElementById("add-to-cart-counter-plus");
 const addToCartBtn = document.getElementById("add-to-cart-btn");
+
+// Cart items
+export const cartBtnCounter = document.getElementById("cart-btn-counter");
 
 // Menu actions
 btnToggle.addEventListener("click", handleMenu);
