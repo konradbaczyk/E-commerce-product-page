@@ -26,11 +26,6 @@
 		background-position: center;
 		z-index: 100;
 		transition: outline 0.3s;
-
-		&:focus,
-		&:active {
-			outline: 1px solid $black;
-		}
 	}
 
 	&__menu {
@@ -55,12 +50,6 @@
 			font-size: 2rem;
 			font-weight: $fw-bold;
 			transition: color 0.3s;
-
-			&:focus,
-			&:active {
-				color: $black;
-				outline: 1px solid $orange;
-			}
 		}
 
 		&--shadow {
@@ -78,13 +67,6 @@
 		}
 	}
 
-	&__logo {
-		&:focus,
-		&:active {
-			outline: 1px solid $orange;
-		}
-	}
-
 	&__personal {
 		display: flex;
 		justify-content: space-around;
@@ -94,11 +76,6 @@
 	&__cart-btn {
 		position: relative;
 		padding: 1em;
-
-		&:focus,
-		&:active {
-			outline: 1px solid $orange;
-		}
 
 		&--added-items {
 			position: absolute;
@@ -256,6 +233,10 @@
 			&--link {
 				font-size: 1.8rem;
 
+				&:active {
+					color: $black;
+				}
+
 				&::before {
 					content: "";
 					position: absolute;
@@ -291,7 +272,36 @@
 		}
 
 		&__logo {
+			position: relative;
+			height: 100%;
+			display: flex;
+			align-items: center;
 			margin: 0 2em;
+
+			&::before {
+				content: "";
+				position: absolute;
+				left: 0;
+				bottom: 0;
+				width: 100%;
+				height: 4px;
+				background-color: $orange;
+				opacity: 0;
+				pointer-events: none;
+				transition: opacity 0.3s;
+			}
+
+			&:focus::before,
+			&:hover::before {
+				opacity: 1;
+			}
+		}
+
+		&__cart-btn {
+			&:focus,
+			&:active {
+				outline: 1px solid $orange;
+			}
 		}
 
 		&__avatar {

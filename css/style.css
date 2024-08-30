@@ -80,9 +80,6 @@ textarea {
   z-index: 100;
   transition: outline 0.3s;
 }
-.navbar__menu-icon:focus, .navbar__menu-icon:active {
-  outline: 1px solid rgb(0, 0, 0);
-}
 .navbar__menu {
   position: fixed;
   left: 0;
@@ -106,10 +103,6 @@ textarea {
   font-weight: 700;
   transition: color 0.3s;
 }
-.navbar__menu--link:focus, .navbar__menu--link:active {
-  color: rgb(0, 0, 0);
-  outline: 1px solid rgb(255, 125, 26);
-}
 .navbar__menu--shadow {
   position: absolute;
   top: 0;
@@ -122,9 +115,6 @@ textarea {
   transform: scaleX(1);
   opacity: 1;
 }
-.navbar__logo:focus, .navbar__logo:active {
-  outline: 1px solid rgb(255, 125, 26);
-}
 .navbar__personal {
   display: flex;
   justify-content: space-around;
@@ -133,9 +123,6 @@ textarea {
 .navbar__cart-btn {
   position: relative;
   padding: 1em;
-}
-.navbar__cart-btn:focus, .navbar__cart-btn:active {
-  outline: 1px solid rgb(255, 125, 26);
 }
 .navbar__cart-btn--added-items {
   position: absolute;
@@ -267,6 +254,9 @@ textarea {
   .navbar__menu--link {
     font-size: 1.8rem;
   }
+  .navbar__menu--link:active {
+    color: rgb(0, 0, 0);
+  }
   .navbar__menu--link::before {
     content: "";
     position: absolute;
@@ -293,7 +283,29 @@ textarea {
     opacity: 1;
   }
   .navbar__logo {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
     margin: 0 2em;
+  }
+  .navbar__logo::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 4px;
+    background-color: rgb(255, 125, 26);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+  }
+  .navbar__logo:focus::before, .navbar__logo:hover::before {
+    opacity: 1;
+  }
+  .navbar__cart-btn:focus, .navbar__cart-btn:active {
+    outline: 1px solid rgb(255, 125, 26);
   }
   .navbar__avatar--img {
     width: 4.5rem;
